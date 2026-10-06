@@ -756,7 +756,7 @@
 // #define LCD_FLIP_Y                      /* enable vertical flip */
 #define LCD_ROTATE                      /* switch X and Y (rotate by 90�) */
 //#define LCD_BGR                         /* reverse red and blue color channels */
-// #define LCD_LATE_ON                     /* turn on LCD after clearing it */
+#define LCD_LATE_ON                     /* turn on LCD after clearing it */
 /* font and symbols: horizontally aligned & flipped */
 #define  FONT_8X8_HF          /* 8x8 Central European font */
 //#define FONT_8x16_ALT_HF                /* 8x16 alternative font */

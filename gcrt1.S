@@ -125,20 +125,22 @@ __init:
 
 	.section .init2,"ax",@progbits
 	clr	__zero_reg__
-	out	AVR_STATUS_ADDR, __zero_reg__
+	out	SREG_IO_ADDR, __zero_reg__
 	ldi	r28,lo8(__stack)
 #ifdef __AVR_XMEGA__
-	out	AVR_STACK_POINTER_LO_ADDR, r28
-#ifdef _HAVE_AVR_STACK_POINTER_HI
+	out	SPL_IO_ADDR, r28
+#ifdef SPH_IO_ADDR
 	ldi	r29,hi8(__stack)
-	out	AVR_STACK_POINTER_HI_ADDR, r29
-#endif	/* _HAVE_AVR_STACK_POINTER_HI */
+	out	SPH_IO_ADDR, r29
+#endif	/* SPH_IO_ADDR */
 #else
-#ifdef _HAVE_AVR_STACK_POINTER_HI
+#ifdef SPH_IO_ADDR
 	ldi	r29,hi8(__stack)
-	out	AVR_STACK_POINTER_HI_ADDR, r29
-#endif	/* _HAVE_AVR_STACK_POINTER_HI */
-	out	AVR_STACK_POINTER_LO_ADDR, r28
+	out	SPH_IO_ADDR, r29
+#endif	/* SPH_IO_ADDR */
+#ifdef SPL_IO_ADDR
+	out	SPL_IO_ADDR, r28
+#endif	/* SPL_IO_ADDR */
 #endif  /* __AVR_XMEGA__ */
 
 #ifdef __AVR_3_BYTE_PC__
@@ -147,10 +149,10 @@ __init:
 #endif	/* __AVR_3_BYTE_PC__ */
 
 #ifdef __AVR_HAVE_RAMPD__
-	out	AVR_RAMPD_ADDR, __zero_reg__
-	out	AVR_RAMPX_ADDR, __zero_reg__
-	out	AVR_RAMPY_ADDR, __zero_reg__
-	out	AVR_RAMPZ_ADDR, __zero_reg__
+	out	RAMPD_IO_ADDR, __zero_reg__
+	out	RAMPX_IO_ADDR, __zero_reg__
+	out	RAMPY_IO_ADDR, __zero_reg__
+	out	RAMPZ_IO_ADDR, __zero_reg__
 #endif
 
 #if defined(__GNUC__) && ((__GNUC__ <= 3) || (__GNUC__ == 4 && __GNUC_MINOR__ <= 3))
@@ -177,7 +179,7 @@ __do_copy_data:
 .L__do_copy_data_carry:
 	inc	r16
 #endif
-	out	AVR_RAMPZ_ADDR, r16
+	out	RAMPZ_IO_ADDR, r16
 	rjmp	.L__do_copy_data_start
 .L__do_copy_data_loop:
 #ifdef __AVR_ENHANCED__
@@ -195,7 +197,7 @@ __do_copy_data:
 	cpc	r27, r17
 	brne	.L__do_copy_data_loop
 #ifdef __AVR_HAVE_RAMPD__
-	out	AVR_RAMPZ_ADDR, __zero_reg__
+	out	RAMPZ_IO_ADDR, __zero_reg__
 #endif /* __AVR_HAVE_RAMPD__*/
 
 #endif /* BIG_CODE */

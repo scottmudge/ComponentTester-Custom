@@ -238,23 +238,23 @@
 
 #ifdef LCD_ST7735
   /* common colors */
-  #define COLOR_BLACK         0x0000    /* RGB 000000 */
-  #define COLOR_BLUE          0x001f    /* RGB 0000F8 */
-  #define COLOR_GREEN         0x07e0    /* RGB 00FC00 */
-  #define COLOR_CYAN          0x07ff    /* RGB 00FCF8 */
-  #define COLOR_RED           0xf800    /* RGB F80000 */
-  #define COLOR_MAGENTA       0xf81f    /* RGB F800F8 */
-  #define COLOR_YELLOW        0xffe0    /* RGB F8FC00 */
-  #define COLOR_ORANGE        0xfd20    /* RGB F8A400 */
-  #define COLOR_GREY          0xc618    /* RGB C0C0C0 */
-  #define COLOR_WHITE         0xffff    /* RGB FFFFFF */
-  #define COLOR_BROWN         0x6920    /* RGB 682400 */
-  #define COLOR_VIOLET        0x780f    /* RGB 780078 */
-  #define COLOR_PALE_YELLOW   0xe70c    /* RGB E2E164 */
-  #define COLOR_PALE_GREEN    0x9fec    /* RGB 99FF66 */
-  #define COLOR_PALE_RED      0xfb6d    /* RGB FF6F6F */
-  #define COLOR_STEEL_BLUE    0x64df    /* RGB 6098F8 */
-  #define COLOR_SKY_BLUE      0x06ff    /* RGB 06DCF9 */
+  #define COLOR_BLACK         0x2945    /* RGB 282828 */
+  #define COLOR_BLUE          0x8533    /* RGB 83A598 */
+  #define COLOR_GREEN         0xBDC4    /* RGB B8BB26 */
+  #define COLOR_CYAN          0x8533    /* RGB 83A598 */
+  #define COLOR_RED           0xFA46    /* RGB FB4934 */
+  #define COLOR_MAGENTA       0xD433    /* RGB D3869B */
+  #define COLOR_YELLOW        0xFDE5    /* RGB FABD2F */
+  #define COLOR_ORANGE        0xFD46    /* RGB FEA932 */
+  #define COLOR_GREY          0x940E    /* RGB 928374 */
+  #define COLOR_WHITE         0xEED6    /* RGB EBDBB2 */
+  #define COLOR_BROWN         0xBC2A    /* RGB BE8755 */
+  #define COLOR_VIOLET        0xD433    /* RGB D3869B */
+  #define COLOR_PALE_YELLOW   0xFDE5    /* RGB FABD2F */
+  #define COLOR_PALE_GREEN    0xBDC4    /* RGB B8BB26 */
+  #define COLOR_PALE_RED      0xFA46    /* RGB FB4934 */
+  #define COLOR_STEEL_BLUE    0x8533    /* RGB 83A598 */
+  #define COLOR_SKY_BLUE      0x8533    /* RGB 83A598 */
 
   /* component color codes */
   #define COLOR_CODE_BLACK    0x0000    /* RGB 000000 */
@@ -399,30 +399,30 @@
 #define COLOR_TITLE           COLOR_YELLOW
 
 /* values */
-#define COLOR_VALUE           COLOR_YELLOW
+#define COLOR_VALUE           COLOR_WHITE
 
 /* cursor */
 #define COLOR_CURSOR          COLOR_YELLOW
 
-/* infos (hello/bye) */
+/* infos */
 #define COLOR_INFO            COLOR_CYAN
 
-/* warnings (not used yet) */
-#define COLOR_WARN            COLOR_YELLOW
+/* warnings */
+#define COLOR_WARN            COLOR_ORANGE
 
 /* errors */
 #define COLOR_ERROR           COLOR_RED
 
-/* marker (selected item) */
+/* marker */
 #define COLOR_MARKER          COLOR_YELLOW
 
 /* symbols */
-#define COLOR_SYMBOL          COLOR_YELLOW
+#define COLOR_SYMBOL          COLOR_MAGENTA
 
 /* color codes for probe pins */
-#define COLOR_PROBE_1         COLOR_YELLOW
+#define COLOR_PROBE_1         COLOR_RED
 #define COLOR_PROBE_2         COLOR_GREEN
-#define COLOR_PROBE_3         COLOR_RED
+#define COLOR_PROBE_3         COLOR_CYAN
 
 /* battery status */
 #define COLOR_BAT_OK          COLOR_GREEN
